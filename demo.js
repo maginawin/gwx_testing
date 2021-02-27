@@ -1,29 +1,29 @@
 var chart = null;
-$.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
+$.getJSON('https://raw.githubusercontent.com/maginawin/gwx_testing/main/data.json', function (data) {
 	chart = Highcharts.chart('container', {
 		chart: {
 			zoomType: 'x'
 		},
 		title: {
-			text: '美元兑欧元汇率走势图'
+			text: '走势图'
 		},
 		subtitle: {
 			text: document.ontouchstart === undefined ?
 			'鼠标拖动可以进行缩放' : '手势操作进行缩放'
 		},
-		xAxis: {
-			type: 'datetime',
-			dateTimeLabelFormats: {
-				millisecond: '%H:%M:%S.%L',
-				second: '%H:%M:%S',
-				minute: '%H:%M',
-				hour: '%H:%M',
-				day: '%m-%d',
-				week: '%m-%d',
-				month: '%Y-%m',
-				year: '%Y'
-			}
-		},
+		// xAxis: {
+		// 	type: 'datetime',
+		// 	dateTimeLabelFormats: {
+		// 		millisecond: '%H:%M:%S.%L',
+		// 		second: '%H:%M:%S',
+		// 		minute: '%H:%M',
+		// 		hour: '%H:%M',
+		// 		day: '%m-%d',
+		// 		week: '%m-%d',
+		// 		month: '%Y-%m',
+		// 		year: '%Y'
+		// 	}
+		// },
 		tooltip: {
 			dateTimeLabelFormats: {
 				millisecond: '%H:%M:%S.%L',
@@ -38,7 +38,7 @@ $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback
 		},
 		yAxis: {
 			title: {
-				text: '汇率'
+				text: ''
 			}
 		},
 		legend: {
@@ -72,7 +72,7 @@ $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback
 		},
 		series: [{
 			type: 'area',
-			name: '美元兑欧元',
+			name: '值',
 			data: data
 		}]
 	});
