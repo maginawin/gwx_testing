@@ -16,7 +16,9 @@ for line in open('data.txt', 'r'):
     line.replace('\n', '')
     item = line.split('\t')
     if len(item) == 2:
-        result.append([item[0].replace('\n', ''), item[1].replace('\n', '')])
+        first = item[0].replace('\n', '')
+        second = item[1].replace('\n', '')
+        result.append([int(first), int(second)])
 
 print(len(result))
 # print(result)
